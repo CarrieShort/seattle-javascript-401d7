@@ -14,6 +14,9 @@ demoApp.config(['$routeProvider', function($rp) {
     })
     // AUTH_EXP: how do the signin/up routes differ and what is their relationship
     // with one another
+    // The signin and signup routes use the same template, but use different controllers. The template checks the controller to see if signup is true. If signup is true different fields and text will render within the view.
+    // Using the same variable name for controllerAs allows the use of a single template, as it can access both controllers using authctrl.
+    // For example authctrl.authenticate will call 2 separate functions depending on which route the user is on.
     .when('/signup', {
       templateUrl: 'templates/auth/views/auth_view.html',
       controller: 'SignUpController',
