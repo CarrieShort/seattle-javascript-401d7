@@ -25,7 +25,7 @@ module.exports = function(app) {
         this.token || this.saveToken(window.localStorage.token);
         return this.token;
       },
-      // returns a promise, if a username is avaialable on this service the promise resolves with the username
+      // getUsername - returns a promise, if a username is avaialable on this service the promise resolves with the username
       // if there is no token, the promise rejects and throws an error 'no authToken'
       // Otherwise the promise makes a request to the profile api to retrieve a username. If the request is successful it resolves with the username and stores it to the service. Otherwise it will reject if the request was unsuccessful.
       getUsername: function() {
